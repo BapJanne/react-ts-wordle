@@ -28,7 +28,8 @@ const GridLetter: React.FC<{ row: number; col: number }> = (props) => {
   const selectBackground = () => {
     if (
       answer[props.col] === currentElement?.letter &&
-      currentRow !== props.row
+      currentRow !== props.row &&
+      guess.length > 0
     ) {
       return classes.rightPlace;
     } else if (
