@@ -1,0 +1,75 @@
+.modal {
+  position: absolute;
+  width: 70vw;
+  max-width: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  background-color: #1d1d20;
+  color: white;
+  z-index: 3;
+  border-radius: 15px;
+  padding: 10px 15px;
+  transition: all 0.5s;
+}
+
+.modalAnimation {
+  opacity: 1;
+}
+
+.title {
+  margin: 0px;
+}
+
+.para {
+  margin: 10px 0px;
+  font-size: 16px;
+}
+
+.footer {
+  display: flex;
+  justify-content: right;
+}
+
+.modal button {
+  background-color: darkgrey;
+  padding: 10px;
+  border-radius: 15px;
+  margin: 15px;
+  font-size: 16px;
+  color: white;
+  border: 0px;
+  margin: 0;
+  transition: 0.3s;
+}
+
+.modal button:hover {
+  cursor: pointer;
+  background-color: grey;
+}
+
+.backdrop {
+  z-index: 2;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  opacity: 0.6;
+}
+
+@media screen and (min-width: 700px) {
+  .modal {
+    margin: 5px;
+    font-size: 25px;
+    padding: 10px 15px;
+  }
+
+  .modal p {
+    font-size: 22px;
+  }
+
+  .modal button {
+    font-size: 20px;
+  }
+}
