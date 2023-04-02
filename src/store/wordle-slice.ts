@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, current, PayloadAction } from "@reduxjs/toolkit";
 import { guessItemType } from "../models/guessArrayModel";
 import words from "../assets/json/mots.json";
 
@@ -65,13 +65,15 @@ const wordleSlice = createSlice({
           console.log("You win !");
           state.currentRow++;
           state.status = "win";
-        } else if (state.guess.length === 30) {
+        } else if (state.guess.length >= 30) {
           state.status = "lose";
           state.currentRow++;
         } else {
           state.currentRow++;
           state.currentCol = 0;
         }
+      } else if (state.currentRow > 5) {
+        state.status = "lose";
       } else {
         state.status = "incorrect";
       }
